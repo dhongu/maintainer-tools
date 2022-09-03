@@ -13,7 +13,7 @@ IMAGES_KEY_RE = re.compile(r"""(["']images["']\s*:\s*["'])([^"']*)(["'])""")
 @click.command()
 @click.argument("path")
 @click.option("--addons-dir", default=".")
-def main(url, addons_dir):
+def main(path, addons_dir):
     for addon_dir in os.listdir(addons_dir):
         manifest_path = get_manifest_path(os.path.join(addons_dir, addon_dir))
         if not manifest_path:
