@@ -7,7 +7,7 @@ import click
 from .manifest import get_manifest_path, parse_manifest
 
 
-IMAGES_KEY_RE = re.compile(r"""(["']images["']\s*:\s*][["'])([^"']*)(["'])""")
+IMAGES_KEY_RE = re.compile(r"""(["']images["']\s*:\s*\[["'])([^"']*)(["'])""")
 
 
 @click.command()
