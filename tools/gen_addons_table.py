@@ -120,7 +120,7 @@ def gen_addons_table(commit, readme_path, addons_dir):
             addon_paths.append((addon_path, True))
     addon_paths = sorted(addon_paths, key=lambda x: x[0])
     # load manifests
-    header = ('addon', 'version', 'maintainers', 'summary')
+    header = ('addon', 'version', 'maintainers', 'summary', 'price')
     rows_available = []
     rows_unported = []
     for addon_path, unported in addon_paths:
@@ -135,6 +135,7 @@ def gen_addons_table(commit, readme_path, addons_dir):
             addon_name = os.path.basename(addon_path)
             link = '[%s](%s/)' % (addon_name, addon_path)
             version = manifest.get('version') or ''
+            price = manifest.get('price')
             summary = manifest.get('summary') or manifest.get('name')
             summary = sanitize_cell(summary)
             installable = manifest.get('installable', True)
@@ -147,13 +148,16 @@ def gen_addons_table(commit, readme_path, addons_dir):
                     link,
                     version,
                     render_maintainers(manifest),
-                    summary))
+                    summary,
+                    price
+                ))
             else:
                 rows_unported.append((
                     link,
                     version + ' (unported)',
                     render_maintainers(manifest),
-                    summary
+                    summary,
+                    price
                 ))
     # replace table in README.md
     replace_in_readme(readme_path, header, rows_available, rows_unported)
