@@ -147,7 +147,7 @@ def gen_addons_table(commit, readme_path, addons_dir):
             addon_name = os.path.basename(addon_path)
             link = "[%s](%s/)" % (addon_name, addon_path)
             version = manifest.get("version") or ""
-            price = manifest.get('price') or ""
+            price = str(manifest.get('price')) or ""
             summary = manifest.get("summary") or manifest.get("name")
             summary = sanitize_cell(summary)
             installable = manifest.get("installable", True)

@@ -65,7 +65,7 @@ LICENSE_BADGES = {
         "License: GPL-3",
     ),
      "OPL-1": (
-         "https://img.shields.io/badge/licence-OPL--1-magenta.png",
+         "https://img.shields.io/badge/licence-OPL--1-blue.png",
          "https://www.odoo.com/documentation/master/legal/licenses.html",
          "License: OPL-1",
      ),
