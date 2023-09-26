@@ -64,11 +64,11 @@ LICENSE_BADGES = {
         "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
         "License: GPL-3",
     ),
-     "OPL-1": (
-         "https://img.shields.io/badge/licence-OPL--1-blue.png",
-         "https://www.odoo.com/documentation/master/legal/licenses.html",
-         "License: OPL-1",
-     ),
+    "OPL-1": (
+        "https://img.shields.io/badge/licence-OPL--1-blue.png",
+        "https://www.odoo.com/documentation/master/legal/licenses.html",
+        "License: OPL-1",
+    ),
 }
 
 DEVELOPMENT_STATUS_BADGES = {
