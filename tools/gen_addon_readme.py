@@ -439,12 +439,9 @@ def gen_one_addon_index(readme_filename):
         rb"(<meta.*generator.*Docutils)\s*[\d.]+", rb"\1", index, re.MULTILINE
     )
     stylesheet_link = RST2HTML_SETTINGS["stylesheet_link"]
-    index = re.sub(
-        r'<link\s+rel="stylesheet"\s+href="[^"]+"',
-        f'<link rel="stylesheet" href="{stylesheet_link}"',
-        index,
-        re.MULTILINE
-    )
+    stylesheet = f'<link rel="stylesheet" href="{stylesheet_link}"'
+    index = re.sub(rb'<link\s+rel="stylesheet"\s+href="[^"]+"', stylesheet.encode(), index, re.MULTILINE)
+
     with open(index_filename, "wb") as f:
         f.write(index)
     return index_filename
