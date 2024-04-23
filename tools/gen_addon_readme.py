@@ -125,6 +125,8 @@ RST2HTML_SETTINGS = {
     # utf-8 is default value for output_encoding
     # but let's make it explicit here:
     "output_encoding": "utf-8",
+
+    "embed_stylesheet": False,
 }
 
 # GitHub Flavored Markdown
