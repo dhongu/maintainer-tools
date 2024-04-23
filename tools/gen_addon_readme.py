@@ -128,8 +128,8 @@ RST2HTML_SETTINGS = {
 
     "embed_stylesheet": False,
     "link-stylesheet": True,
-    "stylesheet_path": 'https://github.com/dhongu/maintainer-tools/blob/master/template/module/templates/html4css1.css',
-    'stylesheet_link': 'https://github.com/dhongu/maintainer-tools/blob/master/template/module/templates/html4css1.css',
+    "stylesheet_path": 'https://fossies.org/linux/docutils/docutils/writers/html4css1/html4css1.css',
+    'stylesheet_link': 'https://fossies.org/linux/docutils/docutils/writers/html4css1/html4css1.css',
 
 }
 
