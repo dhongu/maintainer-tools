@@ -127,6 +127,7 @@ RST2HTML_SETTINGS = {
     "output_encoding": "utf-8",
 
     "embed_stylesheet": False,
+    "stylesheet_path": 'https://github.com/dhongu/maintainer-tools/blob/master/template/module/templates/html4css1.css',
 }
 
 # GitHub Flavored Markdown
