@@ -127,7 +127,10 @@ RST2HTML_SETTINGS = {
     "output_encoding": "utf-8",
 
     "embed_stylesheet": False,
-    "link_stylesheet": 'https://github.com/dhongu/maintainer-tools/blob/master/template/module/templates/html4css1.css',
+    "link-stylesheet": True,
+    "stylesheet_path": 'https://github.com/dhongu/maintainer-tools/blob/master/template/module/templates/html4css1.css',
+    'stylesheet_link': 'https://github.com/dhongu/maintainer-tools/blob/master/template/module/templates/html4css1.css',
+
 }
 
 # GitHub Flavored Markdown
@@ -434,6 +437,12 @@ def gen_one_addon_index(readme_filename):
     # useless changes in the readme
     index = re.sub(
         rb"(<meta.*generator.*Docutils)\s*[\d.]+", rb"\1", index, re.MULTILINE
+    )
+    index = re.sub(
+        r'<link\s+rel="stylesheet"\s+href="[^"]+"',
+        f'<link rel="stylesheet" href="{RST2HTML_SETTINGS['stylesheet_link']}"',
+        index,
+        re.MULTILINE
     )
     with open(index_filename, "wb") as f:
         f.write(index)
